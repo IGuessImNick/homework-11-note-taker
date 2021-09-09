@@ -8,7 +8,8 @@ const path = require("path");
 const uuid = require("uuid");
 
 const app = express();
-const PORT = process.env.PORT || 1001;
+// local port
+const PORT = process.env.PORT || 8081;
 
 // =================================================
 // MIDDLEWEAR
@@ -17,14 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// =================================================
-// ROUTING
-// =================================================
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
-
 // gets notes and saves them to db.json
-app.get("api/notes", (req, res) => {
+app.get("/api/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "/db/db.json"))
 });
 
