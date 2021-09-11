@@ -1,6 +1,5 @@
-// =================================================
+
 // DEPENDENCIES
-// =================================================
 const express = require("express");
 const fs = require("fs");
 const notes = require("./db/db.json");
@@ -11,9 +10,8 @@ const app = express();
 // local port
 const PORT = process.env.PORT || 8081;
 
-// =================================================
+
 // MIDDLEWEAR
-// =================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -51,9 +49,7 @@ app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
-// =================================================
-// LISTENER
-// =================================================
+// Port setup
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT)
 });

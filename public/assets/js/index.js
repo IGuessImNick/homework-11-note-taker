@@ -93,7 +93,7 @@ const handleNewNoteView = function () {
 };
 
 // If a note's title or text are empty, hide the save button
-// Or else show it
+// else show it
 const handleRenderSaveBtn = function () {
   if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
     $saveNoteBtn.hide();
